@@ -1,0 +1,5 @@
+name: Randomizer
+version: 0.1
+main: de.dinomarlir.randomizer.Randomizer
+authors:
+  - DinoMarlir
