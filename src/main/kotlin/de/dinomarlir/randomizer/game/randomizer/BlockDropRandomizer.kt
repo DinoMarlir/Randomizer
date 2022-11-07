@@ -6,12 +6,19 @@ import org.bukkit.Material
 import org.bukkit.event.block.BlockDropItemEvent
 
 object BlockDropRandomizer {
+    private var availableItems: MutableList<Material> = Material.values().toMutableList()
+    private var items = HashMap<Material, Material>()
 
     init {
         listen<BlockDropItemEvent> {
             it.items.forEach {
                 item ->
-                item.itemStack = itemStack(Material.values().random()) {}
+                if (!items.containsKey(item.itemStack.type)) {
+                    val randomItem = availableItems.random()
+                    items.put(item.itemStack.type, randomItem)
+                    availableItems.remove(randomItem)
+                }
+                item.itemStack = itemStack(items[item.itemStack.type]!!) {}
             }
         }
     }
