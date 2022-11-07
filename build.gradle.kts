@@ -5,6 +5,7 @@ plugins {
     kotlin("jvm") version "1.7.20"
     id("io.papermc.paperweight.userdev") version "1.3.8"
     id("xyz.jpenilla.run-paper") version "1.0.6"
+    kotlin("plugin.serialization") version "1.7.20"
 }
 
 group = "de.dinomarlir"
@@ -20,6 +21,8 @@ dependencies {
 
     // KSpigot dependency
     implementation("net.axay", "kspigot", kspigotVersion)
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 }
 
 tasks {

@@ -1,5 +1,8 @@
 name: Randomizer
 version: 0.1
 main: de.dinomarlir.randomizer.Randomizer
+api-version: 1.19
 authors:
   - DinoMarlir
+libraries:
+  - "net.axay:kspigot:1.19.0"
