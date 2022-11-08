@@ -1,6 +1,7 @@
 package de.dinomarlir.randomizer.game
 
 import de.dinomarlir.randomizer.extensions.sendSubtitle
+import de.dinomarlir.randomizer.game.event.Event
 import de.dinomarlir.randomizer.game.randomizer.BlockDropRandomizer
 import de.dinomarlir.randomizer.game.randomizer.EntityDropRandomizer
 import de.dinomarlir.randomizer.utils.Config
@@ -8,6 +9,7 @@ import de.dinomarlir.randomizer.utils.game
 import net.axay.kspigot.extensions.onlinePlayers
 
 class Game {
+    val currentEvent: Event? = null
 
     init {
         if (Config.config.entityDropRandomizer) EntityDropRandomizer

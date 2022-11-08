@@ -11,8 +11,10 @@ import net.axay.kspigot.gui.kSpigotGUI
 import net.axay.kspigot.gui.openGUI
 import net.axay.kspigot.items.itemStack
 import net.axay.kspigot.items.meta
+import net.axay.kspigot.particles.particle
 import net.kyori.adventure.text.Component
 import org.bukkit.Material
+import org.bukkit.Particle
 import org.bukkit.event.player.PlayerJoinEvent
 
 object PlayerJoinListener {
@@ -20,7 +22,7 @@ object PlayerJoinListener {
     init {
         listen<PlayerJoinEvent> {
             val player = it.player
-
+            
             if (!Config.config.gameStarted) player.openGUI(kSpigotGUI(GUIType.THREE_BY_NINE) {
                 defaultPage = 0
 
